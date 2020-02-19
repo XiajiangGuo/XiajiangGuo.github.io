@@ -227,6 +227,30 @@
 </div>
 
 
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<div id="comment-container"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.min.js"></script>
+<script>
+    var gitalk = new Gitalk({
+        clientID: '0f66accee658b020a9d4',
+        clientSecret: '8837486f6375ca2f95b3af97d9b1bc5266b078d9',
+        id: 'ca9e808f07659357175c6a08ec1f7df3',
+        repo: 'gitalkrepo',
+        owner: 'XiajiangGuo',
+        admin: "XiajiangGuo",
+        createIssueManually: false,
+        distractionFreeMode: false
+    })
+    gitalk.render('comment-container')
+</script>
+
+    </div>
+</div>
 </div>
                 
 
