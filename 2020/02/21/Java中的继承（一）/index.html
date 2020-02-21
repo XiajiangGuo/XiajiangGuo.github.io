@@ -7,22 +7,23 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>Tags - 小郭的窝</title>
+<title>Java继承详解举例 - 小郭的窝</title>
 
 
-    <meta name="description" content="来自Britain的培根子曾经曰过：知识就是力量。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="小郭的窝">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+    <meta name="description" content="Java继承是什么？首先要来一段来自于网上的解释：  继承是Java面向对象编程技术的一块基石，因为它允许创建分等级层次的类。继承就是子类继承父类的特征和行为，使得子类对象（实例）具有父类的实例域和方法，或子类从父类继承方法，使得子类具有父类相同的行为。  生活中的继承  兔子和羊属于食草动物类，狮子和豹属于食肉动物类。食草动物和食肉动物又是属于动物类。所以继承需要符合的关系是：父类通用，子类具体">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java继承详解举例">
+<meta property="og:url" content="http://yoursite.com/2020/02/21/Java%E4%B8%AD%E7%9A%84%E7%BB%A7%E6%89%BF%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
 <meta property="og:site_name" content="小郭的窝">
-<meta property="og:description" content="来自Britain的培根子曾经曰过：知识就是力量。">
+<meta property="og:description" content="Java继承是什么？首先要来一段来自于网上的解释：  继承是Java面向对象编程技术的一块基石，因为它允许创建分等级层次的类。继承就是子类继承父类的特征和行为，使得子类对象（实例）具有父类的实例域和方法，或子类从父类继承方法，使得子类具有父类相同的行为。  生活中的继承  兔子和羊属于食草动物类，狮子和豹属于食肉动物类。食草动物和食肉动物又是属于动物类。所以继承需要符合的关系是：父类通用，子类具体">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="og:image" content="http://yoursite.com/gallery/thumbnails/girlsFir.jpg">
+<meta property="article:published_time" content="2020-02-20T23:55:53.000Z">
+<meta property="article:modified_time" content="2020-02-21T05:10:17.531Z">
 <meta property="article:author" content="Xiajiang Guo">
-<meta property="article:tag" content="自我隔离">
 <meta property="article:tag" content="Java继承">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
+<meta name="twitter:image" content="http://yoursite.com/gallery/thumbnails/girlsFir.jpg">
 
 
 
@@ -88,7 +89,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="小郭的窝" height="28">
+                <img src="/images/logo.svg" alt="Java继承详解举例" height="28">
             
             </a>
         </div>
@@ -105,7 +106,7 @@
                 <a class="navbar-item"
                 href="/categories">Categories</a>
                 
-                <a class="navbar-item is-active"
+                <a class="navbar-item"
                 href="/tags">Tags</a>
                 
                 <a class="navbar-item"
@@ -124,6 +125,10 @@
                     
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="Search" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -137,32 +142,169 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                Tags
-            </h3>
-            <div class="field is-grouped is-grouped-multiline">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/girlsFir.jpg" alt="Java继承详解举例">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-02-20T23:55:53.000Z">2020-02-21</time>
                 
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Java%E7%BB%A7%E6%89%BF/">
-                        <span class="tag">Java继承</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Java%E5%AD%A6%E4%B9%A0/">Java学习</a>
                 </div>
                 
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/%E8%87%AA%E6%88%91%E9%9A%94%E7%A6%BB/">
-                        <span class="tag">自我隔离</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    8 minutes read (About 1152 words)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span> visits
+                </span>
                 
             </div>
         </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                Java继承详解举例
+            
+        </h1>
+        <div class="content">
+            <h2 id="Java继承是什么？"><a href="#Java继承是什么？" class="headerlink" title="Java继承是什么？"></a>Java继承是什么？</h2><p>首先要来一段来自于网上的解释：</p>
+<blockquote>
+<p>继承是Java面向对象编程技术的一块基石，因为它允许创建分等级层次的类。<br>继承就是子类继承父类的特征和行为，使得子类对象（实例）具有父类的实例域和方法，或子类从父类继承方法，使得子类具有父类相同的行为。</p>
+</blockquote>
+<h3 id="生活中的继承"><a href="#生活中的继承" class="headerlink" title="生活中的继承"></a>生活中的继承</h3><p><img src="/images/inheritExample.jpg" alt=""></p>
+<blockquote>
+<p>兔子和羊属于食草动物类，狮子和豹属于食肉动物类。<br>食草动物和食肉动物又是属于动物类。<br>所以继承需要符合的关系是：父类通用，子类具体。<br>虽然食草动物和食肉动物都是属于动物，但是两者的属性和行为上有差别，所以子类会具有父类的一般特性，但也会具有自身的特性。</p>
+</blockquote>
+<h2 id="Java继承代码示例"><a href="#Java继承代码示例" class="headerlink" title="Java继承代码示例:"></a>Java继承代码示例:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">public class Item &#123;</span><br><span class="line">	    private String title;</span><br><span class="line">	    private int playingTime;</span><br><span class="line">	    private String comment;</span><br><span class="line"></span><br><span class="line">    	public Item(String title,String comment,int playingTime) &#123;</span><br><span class="line">		super();</span><br><span class="line">		this.title &#x3D; title;</span><br><span class="line">		this.comment&#x3D; comment;</span><br><span class="line">		this.playingTime &#x3D; playingTime;</span><br><span class="line">	    &#125;</span><br><span class="line"></span><br><span class="line">	    public void print() &#123;</span><br><span class="line">		System.out.println(title +&quot;是&quot; +comment);</span><br><span class="line">	    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class CD extends Item&#123;</span><br><span class="line">        private String artist;</span><br><span class="line"></span><br><span class="line">    	public CD(String title, String artist, int playingTime, String comment) </span><br><span class="line">	    &#123;</span><br><span class="line">		super(title,comment,playingTime);</span><br><span class="line">		this.artist &#x3D; artist;</span><br><span class="line">	    &#125;</span><br><span class="line"></span><br><span class="line">        public void print() &#123;</span><br><span class="line">		System.out.print(artist+&quot;的&quot;);</span><br><span class="line">		super.print();</span><br><span class="line">	    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class Database &#123;</span><br><span class="line"></span><br><span class="line">        private ArrayList&lt;Item&gt; listItem &#x3D; new ArrayList&lt;Item&gt;();</span><br><span class="line">            </span><br><span class="line">        public void add(Item item) &#123;</span><br><span class="line">            listItem.add(item);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public void list() &#123;</span><br><span class="line">            for(Item item: listItem) &#123;			</span><br><span class="line">                item.print();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        public static void main(String[] args) &#123;</span><br><span class="line">            </span><br><span class="line">            Database db &#x3D; new Database();</span><br><span class="line">            db.add(new CD(&quot;东风破&quot;, &quot;周杰伦&quot;, 60, &quot;妈妈买给我的第一章专辑&quot;));</span><br><span class="line">            db.list();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上述代码运行结果如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">周杰伦的东风破是妈妈买给我的第一张专辑</span><br></pre></td></tr></table></figure>
+
+<p>在上面代码块中，Item为父类，CD为其子类。extends关键字用来声明一个类是从另外一个类继承来的。格式为：子类 extends 父类。</p>
+<h2 id="Java继承运行的顺序"><a href="#Java继承运行的顺序" class="headerlink" title="Java继承运行的顺序"></a>Java继承运行的顺序</h2><p>从子类的构造器开始 –&gt; 先对父类部分（变量）初始化–&gt;然后子类本身初始化 –&gt; 最后进入子类自己的构造函数完成赋值。</p>
+<p>以上述代码举例，从CD中的构造器开始，首先是调用父类Item中的构造器，然后完成初始化后，返回CD构造器，进行最后的Artist的赋值，最后CD对象添加成功。</p>
+<p><strong>提示：</strong></p>
+<p>如果子类有super关键字传参数给父类，子类构造器运行后会先到父类，在包含对应参数的构造器内对super()传进来的参数初始化。<br>如果子类没有super关键字，子类构造器还是会先引用父类，寻找不带参数的构造器并初始化其内容，然后回到子类自己来进行剩下部分的初始化。</p>
+<h2 id="继承特性"><a href="#继承特性" class="headerlink" title="继承特性"></a>继承特性</h2><ol>
+<li><p>子类继承父类所有非private 的属性和方法，虽然可以用Protected来解决，但一般不推荐。Protected（）允许自己访问，同一个包内访问以及子类可以访问（即使不在一个包内）。</p>
+</li>
+<li><p>super关键字： super是用来实现对父类成员的访问，引用当前对象的父类</p>
+</li>
+<li><p>this关键字：this则是指向自己的引用</p>
+</li>
+<li><p>final关键字： final 既可以修饰方法也可以修饰类。 如果修饰类，类的属性便为不可继承，最终类。如果修饰方法，方法不能被子类重写。</p>
+</li>
+</ol>
+<p><strong>举例1</strong>（类名修饰改为final）:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">final class Item &#123;</span><br></pre></td></tr></table></figure>
+<p>eclipse报错如下： </p>
+<p>The type CD cannot subclass the final class Item. (CD不能继承Item)</p>
+<p><strong>举例2</strong> （方法名修饰改为final）<br>Item类中的方法，在CD类中有重写的代码。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">final void print() &#123;</span><br></pre></td></tr></table></figure>
+
+<p>eclipse报错如下： </p>
+<p>Cannot override the final method from  Item.（不可能重写代码）</p>
+<p>（挖个坑：下次写下Java重写和重载的区别）</p>
+<ol start="5">
+<li>implements关键字：可以某种程度上来说帮助Java实现多继承的特性，使用范围为类继承接口的情况，可以同时继承多个接口（接口跟接口之间采用逗号分隔）。</li>
+</ol>
+<p><strong>举例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public interface A &#123;</span><br><span class="line">    public void eat();</span><br><span class="line">    public void sleep();</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">public interface B &#123;</span><br><span class="line">    public void show();</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">public class C implements A,B &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面的内容大概记录了我对Java继承的理解，应该还有很多不到之处，还请谅解</p>
+<p><strong><em>参考</em></strong></p>
+<blockquote>
+<ol>
+<li>菜鸟笔记: <a href="https://www.runoob.com/java/java-inheritance.html">https://www.runoob.com/java/java-inheritance.html</a></li>
+<li>翁恺的Java课程：<a href="https://www.bilibili.com/video/av71398594?p=72">https://www.bilibili.com/video/av71398594?p=72</a></li>
+</ol>
+</blockquote>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Java%E7%BB%A7%E6%89%BF/" rel="tag">Java继承</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
     </div>
-</div></div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <div class="buttons is-centered">
+            
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/02/19/What-to-do-during-self-isolation/">
+                <span class="level-item">What to do during self-isolation</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<div id="comment-container"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.min.js"></script>
+<script>
+    var gitalk = new Gitalk({
+        clientID: '0f66accee658b020a9d4',
+        clientSecret: '8837486f6375ca2f95b3af97d9b1bc5266b078d9',
+        id: '244f3f974a5bda50b279c4101c7e66ca',
+        repo: 'gitalkrepo',
+        owner: 'XiajiangGuo',
+        admin: "XiajiangGuo",
+        createIssueManually: false,
+        distractionFreeMode: false
+    })
+    gitalk.render('comment-container')
+</script>
+
+    </div>
+</div>
+</div>
                 
 
 
@@ -267,6 +409,38 @@
 </div>
     
         
+
+    <div class="card widget" id="toc">
+        <div class="card-content">
+            <div class="menu">
+                <h3 class="menu-label">
+                    Catalogue
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#Java继承是什么？">
+        <span class="has-mr-6">1</span>
+        <span>Java继承是什么？</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#生活中的继承">
+        <span class="has-mr-6">1.1</span>
+        <span>生活中的继承</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Java继承代码示例">
+        <span class="has-mr-6">2</span>
+        <span>Java继承代码示例:</span>
+        </a></li><li>
+        <a class="is-flex" href="#Java继承运行的顺序">
+        <span class="has-mr-6">3</span>
+        <span>Java继承运行的顺序</span>
+        </a></li><li>
+        <a class="is-flex" href="#继承特性">
+        <span class="has-mr-6">4</span>
+        <span>继承特性</span>
+        </a></li></ul>
+            </div>
+        </div>
+    </div>
+
     
         <div class="card widget">
     <div class="card-content">
@@ -641,7 +815,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="小郭的窝" height="28">
+                    <img src="/images/logo.svg" alt="Java继承详解举例" height="28">
                 
                 </a>
                 <p class="is-size-7">
