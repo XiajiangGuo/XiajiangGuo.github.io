@@ -7,13 +7,13 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>小郭的窝</title>
+<title>Tag: Java 重构 重载 - 小郭的窝</title>
 
 
     <meta name="description" content="来自Britain的培根子曾经曰过：知识就是力量。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="小郭的窝">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/Java-%E9%87%8D%E6%9E%84-%E9%87%8D%E8%BD%BD/index.html">
 <meta property="og:site_name" content="小郭的窝">
 <meta property="og:description" content="来自Britain的培根子曾经曰过：知识就是力量。">
 <meta property="og:locale" content="en_US">
@@ -94,7 +94,7 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item is-active"
+                <a class="navbar-item"
                 href="/">Home</a>
                 
                 <a class="navbar-item"
@@ -135,7 +135,17 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    <div class="card-content">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/tags">Tags</a></li>
+            <li class="is-active"><a href="#" aria-current="page">Java 重构 重载</a></li>
+        </ul>
+        </nav>
+    </div>
+</div>
+
     
 <div class="card">
     
@@ -224,260 +234,6 @@
 <li>菜鸟教程：Java 重写(Override)与重载(Overload) <a href="https://www.runoob.com/java/java-override-overload.html">https://www.runoob.com/java/java-override-overload.html</a></li>
 <li>为什么要重写父类方法而不是重新再写一个方法? <a href="https://segmentfault.com/q/1010000007304795">https://segmentfault.com/q/1010000007304795</a></li>
 </ol>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/21/Java%E4%B8%AD%E7%9A%84%E7%BB%A7%E6%89%BF%EF%BC%88%E4%B8%80%EF%BC%89/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/girlsFir.jpg" alt="Java继承详解举例">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-20T23:55:53.000Z">2020-02-21</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%AD%A6%E4%B9%A0/">Java学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    8 minutes read (About 1152 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/21/Java%E4%B8%AD%E7%9A%84%E7%BB%A7%E6%89%BF%EF%BC%88%E4%B8%80%EF%BC%89/">Java继承详解举例</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="Java继承是什么？"><a href="#Java继承是什么？" class="headerlink" title="Java继承是什么？"></a>Java继承是什么？</h2><p>首先要来一段来自于网上的解释：</p>
-<blockquote>
-<p>继承是Java面向对象编程技术的一块基石，因为它允许创建分等级层次的类。<br>继承就是子类继承父类的特征和行为，使得子类对象（实例）具有父类的实例域和方法，或子类从父类继承方法，使得子类具有父类相同的行为。</p>
-</blockquote>
-<h3 id="生活中的继承"><a href="#生活中的继承" class="headerlink" title="生活中的继承"></a>生活中的继承</h3><p><img src="/images/inheritExample.jpg" alt=""></p>
-<blockquote>
-<p>兔子和羊属于食草动物类，狮子和豹属于食肉动物类。<br>食草动物和食肉动物又是属于动物类。<br>所以继承需要符合的关系是：父类通用，子类具体。<br>虽然食草动物和食肉动物都是属于动物，但是两者的属性和行为上有差别，所以子类会具有父类的一般特性，但也会具有自身的特性。</p>
-</blockquote>
-<h2 id="Java继承代码示例"><a href="#Java继承代码示例" class="headerlink" title="Java继承代码示例:"></a>Java继承代码示例:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">public class Item &#123;</span><br><span class="line">	    private String title;</span><br><span class="line">	    private int playingTime;</span><br><span class="line">	    private String comment;</span><br><span class="line"></span><br><span class="line">    	public Item(String title,String comment,int playingTime) &#123;</span><br><span class="line">		super();</span><br><span class="line">		this.title &#x3D; title;</span><br><span class="line">		this.comment&#x3D; comment;</span><br><span class="line">		this.playingTime &#x3D; playingTime;</span><br><span class="line">	    &#125;</span><br><span class="line"></span><br><span class="line">	    public void print() &#123;</span><br><span class="line">		System.out.println(title +&quot;是&quot; +comment);</span><br><span class="line">	    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class CD extends Item&#123;</span><br><span class="line">        private String artist;</span><br><span class="line"></span><br><span class="line">    	public CD(String title, String artist, int playingTime, String comment) </span><br><span class="line">	    &#123;</span><br><span class="line">		super(title,comment,playingTime);</span><br><span class="line">		this.artist &#x3D; artist;</span><br><span class="line">	    &#125;</span><br><span class="line"></span><br><span class="line">        public void print() &#123;</span><br><span class="line">		System.out.print(artist+&quot;的&quot;);</span><br><span class="line">		super.print();</span><br><span class="line">	    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class Database &#123;</span><br><span class="line"></span><br><span class="line">        private ArrayList&lt;Item&gt; listItem &#x3D; new ArrayList&lt;Item&gt;();</span><br><span class="line">            </span><br><span class="line">        public void add(Item item) &#123;</span><br><span class="line">            listItem.add(item);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public void list() &#123;</span><br><span class="line">            for(Item item: listItem) &#123;			</span><br><span class="line">                item.print();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        public static void main(String[] args) &#123;</span><br><span class="line">            </span><br><span class="line">            Database db &#x3D; new Database();</span><br><span class="line">            db.add(new CD(&quot;东风破&quot;, &quot;周杰伦&quot;, 60, &quot;妈妈买给我的第一章专辑&quot;));</span><br><span class="line">            db.list();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>上述代码运行结果如下:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">周杰伦的东风破是妈妈买给我的第一张专辑</span><br></pre></td></tr></table></figure>
-
-<p>在上面代码块中，Item为父类，CD为其子类。extends关键字用来声明一个类是从另外一个类继承来的。格式为：子类 extends 父类。</p>
-<h2 id="Java继承运行的顺序"><a href="#Java继承运行的顺序" class="headerlink" title="Java继承运行的顺序"></a>Java继承运行的顺序</h2><p>从子类的构造器开始 –&gt; 先对父类部分（变量）初始化–&gt;然后子类本身初始化 –&gt; 最后进入子类自己的构造函数完成赋值。</p>
-<p>以上述代码举例，从CD中的构造器开始，首先是调用父类Item中的构造器，然后完成初始化后，返回CD构造器，进行最后的Artist的赋值，最后CD对象添加成功。</p>
-<p><strong>提示：</strong></p>
-<p>如果子类有super关键字传参数给父类，子类构造器运行后会先到父类，在包含对应参数的构造器内对super()传进来的参数初始化。<br>如果子类没有super关键字，子类构造器还是会先引用父类，寻找不带参数的构造器并初始化其内容，然后回到子类自己来进行剩下部分的初始化。</p>
-<h2 id="继承特性"><a href="#继承特性" class="headerlink" title="继承特性"></a>继承特性</h2><ol>
-<li><p>子类继承父类所有非private 的属性和方法，虽然可以用Protected来解决，但一般不推荐。Protected（）允许自己访问，同一个包内访问以及子类可以访问（即使不在一个包内）。</p>
-</li>
-<li><p>super关键字： super是用来实现对父类成员的访问，引用当前对象的父类</p>
-</li>
-<li><p>this关键字：this则是指向自己的引用</p>
-</li>
-<li><p>final关键字： final 既可以修饰方法也可以修饰类。 如果修饰类，类的属性便为不可继承，最终类。如果修饰方法，方法不能被子类重写。</p>
-</li>
-</ol>
-<p><strong>举例1</strong>（类名修饰改为final）:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">final class Item &#123;</span><br></pre></td></tr></table></figure>
-<p>eclipse报错如下： </p>
-<p>The type CD cannot subclass the final class Item. (CD不能继承Item)</p>
-<p><strong>举例2</strong> （方法名修饰改为final）<br>Item类中的方法，在CD类中有重写的代码。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">final void print() &#123;</span><br></pre></td></tr></table></figure>
-
-<p>eclipse报错如下： </p>
-<p>Cannot override the final method from  Item.（不可能重写代码）</p>
-<p>（挖个坑：下次写下Java重写和重载的区别）</p>
-<ol start="5">
-<li>implements关键字：可以某种程度上来说帮助Java实现多继承的特性，使用范围为类继承接口的情况，可以同时继承多个接口（接口跟接口之间采用逗号分隔）。</li>
-</ol>
-<p><strong>举例</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public interface A &#123;</span><br><span class="line">    public void eat();</span><br><span class="line">    public void sleep();</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">public interface B &#123;</span><br><span class="line">    public void show();</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">public class C implements A,B &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>上面的内容大概记录了我对Java继承的理解，应该还有很多不到之处，还请谅解</p>
-<p><strong><em>参考</em></strong></p>
-<blockquote>
-<ol>
-<li>菜鸟笔记: <a href="https://www.runoob.com/java/java-inheritance.html">https://www.runoob.com/java/java-inheritance.html</a></li>
-<li>翁恺的Java课程：<a href="https://www.bilibili.com/video/av71398594?p=72">https://www.bilibili.com/video/av71398594?p=72</a></li>
-</ol>
-</blockquote>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-19T10:34:40.000Z">2020-02-19</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    8 minutes read (About 1172 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/19/What-to-do-during-self-isolation/">What to do during self-isolation</a>
-            
-        </h1>
-        <div class="content">
-            <p>转眼之间，今天已经是我自我隔离的第11天了。用我朋友的话来说：这叫居家看守所。我觉得有那么点儿意思。<br>从我回家那会儿算起，我到今天已经有近25天没有正儿八经的出过门儿。回家那天正是年前二十八，河南小县城上还不见人戴口罩。那两天钟南山去了武汉，街上呼啦一下就没人了，用我爸的话说：那就跟净街了一样。腊月二十九的时候，我是先跟兔子见了面，然后晚上说去吃饭。结果那天我县就发现了疑似病例，我俩直接回我家看电影了，看的是《决战中途岛》，别说还是挺有意思的一个电影。但也是打那天起，我就没咋出过门儿。<br>那么问题来了，这么多天我是怎么打发时间的，有几件事情值得说一下：</p>
-<h2 id="学习Java"><a href="#学习Java" class="headerlink" title="学习Java"></a>学习Java</h2><p>来自Britain的培根子曾经说过：知识是第一生产力–来自《武林外传》<br>之所以要把这个列到第一位，因为我真的花了一段时间在这上面。一方面是为了下学期的课程做准备，另一方面也是为了以后的工作着想。<br>我第一次学习Java的时候是在2017年的下半年，那是我第二次来澳洲，也是我第一次接触编程语言。如果想知道我感觉怎么样，这么说吧，我前段整理自己的Chrome书签，里面有一个天涯的帖子叫做：有没有国外读书退学的来聊一聊？ 可想而知有多难。DrJava简直是噩梦一样，跟写字本差不多。我想老师是想告诉我们梅花香自苦寒来吧，但是那真的给我带来了一个特别糟糕的体验，以至于很长一段时间我都把Java当做我最不喜欢的语言之一。直到无意间点进 翁恺 老师的Java课程，才会觉得原来老师教的好很重要，而且自己也不再经常怀疑自己，与其怀疑，不如尝试么。虽然现在学的还是很简单和肤浅的东西，但是我还是觉得很有意思的，应该会越学越有趣。</p>
-<h2 id="看剧和电影"><a href="#看剧和电影" class="headerlink" title="看剧和电影"></a>看剧和电影</h2><p>这个放第二，因为实在是太闲了。尤其是在家的时候，天天大电视在那儿，吃完就嗑瓜子。我们一家四口人磕了快有10斤瓜子吧整个春节。<br>说俩我喜欢的剧吧。<br>在家看《武林外传》比较多，经典剧目，轻松搞笑，随看随关不粘人，特别好。<br>《毒枭：墨西哥》第二季，这一季相对来说没有这么惊艳。菲利斯在里面实在太憋屈了，感觉是个曹操，可合伙人都是棒槌，枭雄不成，入狱结尾，可惜可惜，看后面古斯曼的崛起吧。<br>《性教育》第二季，一如既往的Cool和大尺寸，我一度还在想这些演员们是不是真的未成年。里面各种正经八百的聊一些羞羞的事情，有意思。<br>电影就没啥了<br>《囧妈》 烂，没啥好说的<br>《半个喜剧》 剧情硬伤，梗老，也烂。<br>《决战中途岛》 不错。</p>
-<h2 id="运动"><a href="#运动" class="headerlink" title="运动"></a>运动</h2><p>虽然我妈对我的体重增加意见不大，但是我不太愿意太早有个肚子。<br>加入了Keep上面的老年训练计划，动动胳膊伸伸腿啥的，既不增肌也不有氧，充其量微汗。<br>在澳洲这里我住的房子有一面水泥墙，我正好带来的有乒乓球拍和球，玩儿的不亦乐乎。哈哈</p>
-<h2 id="上网灌水"><a href="#上网灌水" class="headerlink" title="上网灌水"></a>上网灌水</h2><p>东看看西看看，我来澳洲第三天开始才改为每天只看两次新冠疫情，我不是故意逃离这个话题。只是不想让它在我生活中占太大的比重。还是考虑下以后的事情比较好。</p>
-<h2 id="杂事儿"><a href="#杂事儿" class="headerlink" title="杂事儿"></a>杂事儿</h2><p>比如给自己弄了个博客，纯兴趣类型的。好玩儿的很，哈哈。</p>
-<p>就先说这么多吧。</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-18T10:12:53.000Z">2020-02-18</time>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a minute read (About 215 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/18/First-Blog/">First Blog</a>
-            
-        </h1>
-        <div class="content">
-            <p>Hello World.</p>
-<p>2020年2月18日，我的Github博客诞生啦。<br>虽然我还不知道以后我会写一些什么东西上去，但是总觉得这是一件特别有意思的事情。<br>配置起来所有的东西，其实不是很难。<br>在这里要感谢韦阳大神的文章： <a href="https://zhuanlan.zhihu.com/p/35668237">https://zhuanlan.zhihu.com/p/35668237</a><br>以后想先多摸索下基础功能，如果用的频繁起来了，就考虑买个自己的域名儿。<br>目前使用的编辑器为VS Code， 参考的使用方法来自于这篇文章： <a href="https://www.cnblogs.com/shawWey/p/8931697.html">https://www.cnblogs.com/shawWey/p/8931697.html</a></p>
-<p>这里先小小备份下几个常用的hexo 指令：<br>hexo new post “titleofpost” 写新文章<br>hexo g 生成静态网页<br>hexo s 生成本地预览效果<br>hexo d 上传到github上面</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(&quot;Test Markdown&quot;);</span><br></pre></td></tr></table></figure>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-18T09:57:49.392Z">2020-02-18</time>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a minute read (About 123 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/18/hello-world/">Hello World</a>
-            
-        </h1>
-        <div class="content">
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
         </div>
         

@@ -151,6 +151,109 @@
 <div class="card">
     
     <div class="card-image">
+        <a href="/2020/02/22/Java%E4%B8%AD%E7%9A%84%E9%87%8D%E8%BD%BD%E5%92%8C%E9%87%8D%E6%9E%84/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/thumbnails/codeFir.jpg" alt="Java中的重载和重构">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-02-22T09:15:36.000Z">2020-02-22</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Java%E5%AD%A6%E4%B9%A0/">Java学习</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    7 minutes read (About 1122 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/02/22/Java%E4%B8%AD%E7%9A%84%E9%87%8D%E8%BD%BD%E5%92%8C%E9%87%8D%E6%9E%84/">Java中的重载和重构</a>
+            
+        </h1>
+        <div class="content">
+            <p>对于一个像小郭一样的新人，也就是本人。几乎每次都要在重载(overload)和重写(override)上面费下脑子，时不时的看着屏幕上的 <code>@overload</code>伤脑筋，到底是什么意思？<br>下来就来分别讲下他们的区别:<br><img src="/images/override.png" alt=""></p>
+<h2 id="重写-override"><a href="#重写-override" class="headerlink" title="重写(override)"></a>重写(override)</h2><p>重写的重点就在一句： <strong>同名同参同返不同体</strong>  就是相同的名字（外壳），相同的参数，相同的返回类型，但不同的核心。</p>
+<p>重写一般存在于继承关系中，是子类对父类的允许访问的方法的实现过程进行重新编写，返回值和形参都不能改变。</p>
+<h3 id="重写的规则"><a href="#重写的规则" class="headerlink" title="重写的规则"></a>重写的规则</h3><ol>
+<li>子类只能重写父类非 final 修饰的代码，换句话说如果父类的代码为final，即表示其不可被重写。</li>
+<li>访问权限不能比父类中被重写的方法的访问权限更低。例如：如果父类的一个方法被声明为 public，那么在子类中重写该方法就不能声明为 protected。</li>
+<li>重写的原因在于子类可以根据自己的需要，定义属于自己的行为通过实现父类同名的方法。</li>
+<li>声明为 static 的方法不能被重写，但是能够被再次声明。</li>
+<li>参数列表必须完全与被重写方法的相同。</li>
+</ol>
+<p>话不多说先上代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">class sedan extends Car &#123;</span><br><span class="line"></span><br><span class="line">	public void print() &#123;</span><br><span class="line"></span><br><span class="line">		System.out.println(&quot;This is in sedan class&quot;);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class Car &#123;</span><br><span class="line"></span><br><span class="line">	public void print() &#123;</span><br><span class="line"></span><br><span class="line">		System.out.println(&quot;This is in main class&quot;);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">		Car sd &#x3D; new sedan();</span><br><span class="line">		Car car &#x3D; new Car();</span><br><span class="line">		</span><br><span class="line">		sd.print();</span><br><span class="line">		car.print();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">This is in sedan class</span><br><span class="line">This is in main class</span><br></pre></td></tr></table></figure>
+
+<p>在上面的代码中， sedan 为 Car 的子类。主方法中new出来了两个对象，一个是sd，还有一个是car。两个对象分别调用了相同名字但核心不同的代码，所以这才有了上面的输出。</p>
+<h3 id="用super在子类中调用被重写的代码"><a href="#用super在子类中调用被重写的代码" class="headerlink" title="用super在子类中调用被重写的代码"></a>用super在子类中调用被重写的代码</h3><p>同样是上面的代码， 如果我们在sedan类中的print()方法内加上一个super关键字，结果便会不太相同。</p>
+<p><strong><em>用super去调用父类中的print()</em></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class sedan extends Car &#123;</span><br><span class="line"></span><br><span class="line">	public void print() &#123;</span><br><span class="line">		super.print();</span><br><span class="line">		System.out.println(&quot;This is in sedan class&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果为:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">This is in main class</span><br><span class="line">This is in sedan class</span><br><span class="line">This is in main class</span><br></pre></td></tr></table></figure>
+<p>相比上个输出结果，对Car类中的Print()方法重新调用了一次，这是多出第一个输出结果的原因。</p>
+<h2 id="重载-overload"><a href="#重载-overload" class="headerlink" title="重载(overload)"></a>重载(overload)</h2><p>重载是指一个类中，方法名字相同，但是参数不同，返回类型可相同也可不同。</p>
+<p>每个重载的方法都必须有一个独一无二的参数类型列表。</p>
+<p>常用于构造器的重载，如果一个类有多个构造函数，Java会基于所用的参数类型来选择最合适的那一个</p>
+<h3 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h3><ol>
+<li><p>被重载的方法必须改变参数列表(参数个数或类型不一样)；</p>
+</li>
+<li><p>被重载的方法可以改变返回类型；</p>
+</li>
+<li><p>被重载的方法可以改变访问修饰符；</p>
+</li>
+<li><p>被重载的方法可以声明新的或更广的检查异常；</p>
+</li>
+<li><p>方法能够在同一个类中或者在一个子类中被重载。</p>
+</li>
+<li><p>无法以返回值类型作为重载函数的区分标准。</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">public class Overloading &#123;</span><br><span class="line"></span><br><span class="line">	private String name;</span><br><span class="line">	private int num;</span><br><span class="line">	</span><br><span class="line">	&#x2F;&#x2F;First constructor</span><br><span class="line">	public Overloading(String name, int num) &#123;</span><br><span class="line">		this.name &#x3D; name;</span><br><span class="line">		this.num &#x3D; num;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	&#x2F;&#x2F;Overload constructor with different parameter.</span><br><span class="line">	public Overloading(int num) &#123;</span><br><span class="line">		this.num &#x3D; num;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public String toString() &#123;</span><br><span class="line">		if(name !&#x3D; null) </span><br><span class="line">		&#123;</span><br><span class="line">			return name + &quot; &quot; +num;			</span><br><span class="line">		&#125;</span><br><span class="line">		else </span><br><span class="line">		&#123;</span><br><span class="line">			return &quot; &quot; + num;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		Overloading ol &#x3D; new Overloading(&quot;hei&quot;, 520);</span><br><span class="line">		Overloading ovl &#x3D; new Overloading(520);</span><br><span class="line">		</span><br><span class="line">		System.out.println(ol.toString());</span><br><span class="line">		System.out.println(ovl.toString());</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上代码输出结果为：<br>不同的constructor（构造器）创建出了不同的对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hei 520</span><br><span class="line"> 520</span><br></pre></td></tr></table></figure>
+
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ol>
+<li>重写（override）就是在已有方法的基础上，不改变其参数，返回值，但内部处理的核心不一样。</li>
+<li>重载（overloading）是必须要修改参数类型，可以修改返回类型，例如让不同的构造器产生不同的对象。</li>
+</ol>
+<p><strong><em>参考</em></strong></p>
+<ol>
+<li>菜鸟教程：Java 重写(Override)与重载(Overload) <a href="https://www.runoob.com/java/java-override-overload.html">https://www.runoob.com/java/java-override-overload.html</a></li>
+<li>为什么要重写父类方法而不是重新再写一个方法? <a href="https://segmentfault.com/q/1010000007304795">https://segmentfault.com/q/1010000007304795</a></li>
+</ol>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
         <a href="/2020/02/21/Java%E4%B8%AD%E7%9A%84%E7%BB%A7%E6%89%BF%EF%BC%88%E4%B8%80%EF%BC%89/" class="image is-7by1">
             <img class="thumbnail" src="/gallery/thumbnails/girlsFir.jpg" alt="Java继承详解举例">
         </a>
@@ -275,7 +378,7 @@
                     
                     
                     <p class="is-size-6 is-block">
-                        Student
+                        UTAS ICT Student
                     </p>
                     
                     
@@ -295,7 +398,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            4
+                            5
                         </p>
                     </a>
                 </div>
@@ -319,7 +422,7 @@
                     </p>
                     <a href="/tags">
                         <p class="title has-text-weight-normal">
-                            2
+                            3
                         </p>
                     </a>
                 </div>
@@ -406,7 +509,7 @@
                 <span class="level-item">Java学习</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/%E9%9A%8F%E7%AC%94/">
@@ -427,7 +530,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/Java%E7%BB%A7%E6%89%BF/" style="font-size: 10px;">Java继承</a> <a href="/tags/%E8%87%AA%E6%88%91%E9%9A%94%E7%A6%BB/" style="font-size: 10px;">自我隔离</a>
+        <a href="/tags/Java-%E9%87%8D%E6%9E%84-%E9%87%8D%E8%BD%BD/" style="font-size: 10px;">Java 重构 重载</a> <a href="/tags/Java%E7%BB%A7%E6%89%BF/" style="font-size: 10px;">Java继承</a> <a href="/tags/%E8%87%AA%E6%88%91%E9%9A%94%E7%A6%BB/" style="font-size: 10px;">自我隔离</a>
     </div>
 </div>
     
@@ -439,6 +542,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/02/22/Java%E4%B8%AD%E7%9A%84%E9%87%8D%E8%BD%BD%E5%92%8C%E9%87%8D%E6%9E%84/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/codeFir.jpg" alt="Java中的重载和重构">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-22T09:15:36.000Z">2020-02-22</time></div>
+                    <a href="/2020/02/22/Java%E4%B8%AD%E7%9A%84%E9%87%8D%E8%BD%BD%E5%92%8C%E9%87%8D%E6%9E%84/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Java中的重载和重构</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%AD%A6%E4%B9%A0/">Java学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -533,7 +655,7 @@
                     <span class="level-item">February 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -550,6 +672,13 @@
                 Tags
             </h3>
             <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java-%E9%87%8D%E6%9E%84-%E9%87%8D%E8%BD%BD/">
+                        <span class="tag">Java 重构 重载</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java%E7%BB%A7%E6%89%BF/">
@@ -589,6 +718,25 @@
         
         <article class="media">
             
+            <a href="/2020/02/22/Java%E4%B8%AD%E7%9A%84%E9%87%8D%E8%BD%BD%E5%92%8C%E9%87%8D%E6%9E%84/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/thumbnails/codeFir.jpg" alt="Java中的重载和重构">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-22T09:15:36.000Z">2020-02-22</time></div>
+                    <a href="/2020/02/22/Java%E4%B8%AD%E7%9A%84%E9%87%8D%E8%BD%BD%E5%92%8C%E9%87%8D%E6%9E%84/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Java中的重载和重构</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%AD%A6%E4%B9%A0/">Java学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/02/21/Java%E4%B8%AD%E7%9A%84%E7%BB%A7%E6%89%BF%EF%BC%88%E4%B8%80%EF%BC%89/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/thumbnails/girlsFir.jpg" alt="Java继承详解举例">
@@ -680,7 +828,7 @@
                     <span class="level-item">February 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -697,6 +845,13 @@
                 Tags
             </h3>
             <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java-%E9%87%8D%E6%9E%84-%E9%87%8D%E8%BD%BD/">
+                        <span class="tag">Java 重构 重载</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java%E7%BB%A7%E6%89%BF/">
